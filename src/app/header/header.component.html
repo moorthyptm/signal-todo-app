@@ -1,0 +1,30 @@
+<header class="flex justify-between bg-[#673ab7] p-4 text-white items-center">
+  <a class="font-bold text-xl" href="">ToDo App</a>
+  <nav class="space-x-6">
+    <a
+      class="hover:text-slate-200"
+      [routerLink]="['/']"
+      routerLinkActive="router-link-active"
+      >Home</a
+    >
+    <a
+      class="hover:text-slate-200"
+      [routerLink]="['/manage']"
+      routerLinkActive="router-link-active"
+      >Add / Edit
+    </a>
+    <span class="relative inline-block w-12">
+      <a
+        class="hover:text-slate-200"
+        [routerLink]="['/list']"
+        routerLinkActive="router-link-active"
+        >List
+      </a>
+      <div
+        class="flex justify-center w-6 h-6 rounded-full bg-yellow-400 absolute -top-3 -right-2 text-black"
+      >
+        1
+      </div>
+    </span>
+  </nav>
+</header>
