@@ -7,7 +7,6 @@ import { TodoService } from '../todo/todo.service';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
   pendingTodo = inject(TodoService).pendingTodo;

@@ -19,7 +19,6 @@ import { filter, map, tap } from 'rxjs';
   standalone: true,
   imports: [ReactiveFormsModule, NgFor],
   templateUrl: './manage.component.html',
-  styleUrls: ['./manage.component.scss'],
 })
 export default class ManageComponent {
   private fb = inject(NonNullableFormBuilder);

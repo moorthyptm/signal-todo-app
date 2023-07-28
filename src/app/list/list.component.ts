@@ -7,7 +7,6 @@ import { NgFor, NgIf } from '@angular/common';
   standalone: true,
   imports: [NgFor, NgIf],
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
 })
 export default class ListComponent {
   todoService = inject(TodoService);

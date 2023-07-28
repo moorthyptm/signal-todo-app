@@ -6,6 +6,5 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
   standalone: true,
   imports: [NgOptimizedImage],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
 })
 export default class HomeComponent {}
