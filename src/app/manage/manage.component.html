@@ -5,7 +5,9 @@
       class="space-y-5 border-r-2 pr-6 border-gray-300"
       (submit)="onSubmit()"
     >
-      <h4 class="text-center text-gray-500">Add ToDo</h4>
+      <h4 class="text-center text-gray-500">
+        {{ editMode() ? "Edit" : "Add" }} ToDo
+      </h4>
       <div class="mt-1">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="title"
           >Title</label
@@ -33,9 +35,10 @@
       </div>
       <div class="flex flex-row-reverse">
         <button
-          class="p-2 px-4 rounded-md text-white bg-[#673ab7] hover:bg-[#7e5abb]"
+          [disabled]="!todoForm.valid"
+          class="p-2 px-4 rounded-md text-white bg-[#673ab7] hover:bg-[#7e5abb] disabled:opacity-50"
         >
-          Add
+          {{ editMode() ? "Edit" : "Add" }}
         </button>
       </div>
     </form>
@@ -45,24 +48,31 @@
       ToDo List
     </h4>
     <ul class="p-6 text-gray-600">
-      <li class="flex justify-between items-center">
+      <li
+        class="flex justify-between items-center mb-4"
+        *ngFor="let item of list(); let i = index"
+      >
         <div class="flex gap-4 items-center">
           <span class="material-symbols-outlined"> class </span>
           <div>
-            <div class=" ">Title</div>
-            <div class="text-sm">Comment</div>
+            <div>{{ item.title }}</div>
+            <div class="text-sm">{{ item.comment }}</div>
           </div>
         </div>
         <div class="flex gap-4">
-          <span class="text-[#673ab7] cursor-pointer material-symbols-outlined"
+          <span
+            (click)="onEdit(i)"
+            class="text-[#673ab7] cursor-pointer material-symbols-outlined"
             >edit</span
           >
-          <span class="text-red-500 cursor-pointer material-symbols-outlined"
+          <span
+            (click)="!editMode() && onDelete(i)"
+            class="text-red-500 cursor-pointer material-symbols-outlined"
+            [class.opacity-50]="editMode()"
             >delete_forever</span
           >
         </div>
       </li>
     </ul>
-    <div></div>
   </div>
 </div>
