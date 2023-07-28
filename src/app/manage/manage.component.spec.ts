@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ManageComponent } from './manage.component';
+import ManageComponent from './manage.component';
 
 describe('ManageComponent', () => {
   let component: ManageComponent;
@@ -8,7 +8,7 @@ describe('ManageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ManageComponent]
+      imports: [ManageComponent],
     });
     fixture = TestBed.createComponent(ManageComponent);
     component = fixture.componentInstance;
