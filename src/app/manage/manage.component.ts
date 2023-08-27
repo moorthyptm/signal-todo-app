@@ -25,9 +25,9 @@ export default class ManageComponent {
   private todoService = inject(TodoService);
 
   editIndex$ = toObservable(this.todoService.editIndex).pipe(
-    takeUntilDestroyed()
+    takeUntilDestroyed() // No effect
   );
-  // Just for demo, You directly use signal to do this logic with computed
+  // Just for demo, You can directly use signal to do this logic with computed
   editMode = toSignal<boolean>(
     this.editIndex$.pipe(map((index) => index !== null))
   );
